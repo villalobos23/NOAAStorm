@@ -8,6 +8,7 @@ output: html_document
 knitr::opts_chunk$set(fig.path='figure/')
 library(R.utils)
 library(data.table)
+set.seed(23031990)
 ```
 ##Synopsis
 ##Data Processing
@@ -17,10 +18,9 @@ library(data.table)
 ```{r unzipIt, cache=TRUE}
 bunzip2("repdata-data-StormData.csv.bz2",remove=FALSE)
 ```
-```{r readData, cache=TRUE}
-print("Tarda mucho")
-dtStorm <- read.csv("repdata-data-StormData.csv",header = T)
-nrow(dtStorm)
+```{r readData}
+dtStorm <- fread("repdata-data-StormData.csv",header = T,nrows = 1000)
+dtStorm
 ```
 --create variables
 --merge if necessary
