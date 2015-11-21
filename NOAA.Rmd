@@ -1,0 +1,30 @@
+---
+title: "NOAA"
+author: "Luis J. Villalobos"
+date: "20 de noviembre de 2015"
+output: html_document
+---
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.path='figure/')
+library(R.utils)
+library(data.table)
+```
+##Synopsis
+##Data Processing
+
+--where the data is
+--unzip
+```{r unzipIt, cache=TRUE}
+bunzip2("repdata-data-StormData.csv.bz2",remove=FALSE)
+```
+```{r readData, cache=TRUE}
+print("Tarda mucho")
+dtStorm <- read.csv("repdata-data-StormData.csv",header = T)
+nrow(dtStorm)
+```
+--create variables
+--merge if necessary
+
+##Results
+
+
